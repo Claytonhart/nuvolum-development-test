@@ -33,9 +33,10 @@ const Image = styled.img`
 
 const Icon = styled(ChevronLeft)`
   min-width: 48px;
-  transform: translateX(2px);
   color: currentColor;
-  transform: ${(props) => (props.isActive ? 'rotate(180deg)' : 'none')};
+  /* move left 2px for optical centering */
+  transform: ${(props) =>
+    props.isActive ? 'rotate(180deg) translateX(-2px)' : 'translateX(-2px)'};
   transition: all 0.2s ease-in;
 `;
 

@@ -23,10 +23,11 @@ const Wrapper = styled.header`
 const Heading = styled.h1`
   text-align: center;
   font-size: 3.5rem;
+  font-weight: 200;
 `;
 
 const Description = styled.p`
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 `;
 
 export default Header;
