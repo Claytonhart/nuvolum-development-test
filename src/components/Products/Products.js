@@ -5,7 +5,7 @@ import { ProductCard } from './ProductCard';
 import { ProductDetail } from './ProductDetail';
 
 const Products = () => {
-  const [activeProduct, setActiveProduct] = useState(1);
+  const [activeProduct, setActiveProduct] = useState(null);
   const productsQuery = useProducts();
   if (productsQuery.isLoading) return <div>spinner...</div>;
 
@@ -25,7 +25,12 @@ const Products = () => {
           />
         ))}
       </ProductsList>
-      <ProductDetail productInfo={productsQuery.data[activeProduct - 1]} />
+      {activeProduct && (
+        <ProductDetail
+          productInfo={productsQuery.data[activeProduct - 1]}
+          setActiveProduct={setActiveProduct}
+        />
+      )}
     </Wrapper>
   );
 };
@@ -39,6 +44,10 @@ const ProductsList = styled.div`
   flex: 1;
   min-width: 200px;
   padding: 16px;
+  max-width: 50%;
+  @media (max-width: 800px) {
+    max-width: unset;
+  }
 `;
 
 export default Products;

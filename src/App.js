@@ -14,7 +14,7 @@ function App() {
 }
 
 const Main = styled.main`
-  padding: 32px;
+  padding: 0 32px;
 `;
 
 export default App;

@@ -23,6 +23,8 @@ const Wrapper = styled.header`
 const Heading = styled.h1`
   text-align: center;
   font-size: 3.5rem;
+  /* color: hsl(200, 56%, 16%); */
+  color: hsl(200, 50%, 50%);
   font-weight: 200;
 `;
 
