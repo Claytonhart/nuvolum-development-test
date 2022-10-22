@@ -47,6 +47,7 @@ const ProductsList = styled.div`
   max-width: 50%;
   @media (max-width: 800px) {
     max-width: unset;
+    padding: 16px 0;
   }
 `;
 

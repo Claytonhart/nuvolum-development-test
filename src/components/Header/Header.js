@@ -27,7 +27,7 @@ const Heading = styled.h1`
   font-weight: 200;
 
   @media (max-width: 800px) {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
   }
 `;
 
@@ -35,8 +35,8 @@ const Description = styled.p`
   font-size: 1.2rem;
 
   @media (max-width: 800px) {
-    font-size: 1.1rem;
-    max-width: 80%;
+    font-size: 1rem;
+    max-width: 88%;
     margin: 0 auto;
   }
 `;
