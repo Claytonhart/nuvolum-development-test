@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/nuvolum-deveopment-test/static/js/main.65bfcdec.js",
+    "index.html": "/nuvolum-deveopment-test/index.html",
+    "main.65bfcdec.js.map": "/nuvolum-deveopment-test/static/js/main.65bfcdec.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.65bfcdec.js"
+  ]
+}
