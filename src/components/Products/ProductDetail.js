@@ -1,9 +1,18 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { X } from 'react-feather';
+import { X, Star } from 'react-feather';
 
 export const ProductDetail = ({ productInfo, setActiveProduct }) => {
   const { price, description, rating, image } = productInfo;
+
+  let stars = [];
+  for (let i = 0; i < 5; i++) {
+    if (i < Math.round(rating.rate)) {
+      stars.push(<Star key={i} style={{ fill: 'hsl(48, 100%, 50%)' }} />);
+    } else {
+      stars.push(<Star key={i} />);
+    }
+  }
 
   return (
     <ModalWrapper>
@@ -15,9 +24,19 @@ export const ProductDetail = ({ productInfo, setActiveProduct }) => {
         <BottomWrapper>
           <DetailWrapper>
             <h2>${price}</h2>
-            <p>{description}</p>
-            <div>{rating.rate}</div>
-            <div>{rating.count}</div>
+            <Desc>{description}</Desc>
+            <RatingContainer>
+              {/* <div>{rating.rate}</div> */}
+              <StarContainer>
+                {/* <Star style={{ fill: 'hsl(48, 100%, 50%)' }} />
+                <Star />
+                <Star />
+                <Star />
+                <Star /> */}
+                {stars}
+              </StarContainer>
+              <RatingCount>({rating.count})</RatingCount>
+            </RatingContainer>
           </DetailWrapper>
           <Button>Add to Cart</Button>
         </BottomWrapper>
@@ -84,6 +103,25 @@ const Image = styled.img`
 
 const DetailWrapper = styled.div`
   padding: 16px;
+`;
+
+const Desc = styled.p`
+  padding: 8px 0;
+`;
+
+const RatingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+`;
+
+const RatingCount = styled.div`
+  color: hsl(0, 0%, 50%);
+`;
+
+const StarContainer = styled.div`
+  display: flex;
+  color: hsl(48, 100%, 50%);
 `;
 
 const Button = styled.button`
