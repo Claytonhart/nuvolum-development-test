@@ -10,7 +10,6 @@ const Products = () => {
   if (productsQuery.isLoading) return <div>spinner...</div>;
 
   const handleClick = (id) => {
-    console.log('yes things');
     setActiveProduct(id);
   };
 
@@ -21,6 +20,7 @@ const Products = () => {
           <ProductCard
             key={product.id}
             product={product}
+            activeId={activeProduct}
             handleClick={() => handleClick(product.id)}
           />
         ))}
