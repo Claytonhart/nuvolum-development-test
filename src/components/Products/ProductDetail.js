@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import { X, Star } from 'react-feather';
+import Stars from './Stars';
 
 export const ProductDetail = ({ productInfo, setActiveProduct }) => {
   const { price, description, rating, image } = productInfo;
@@ -26,15 +27,7 @@ export const ProductDetail = ({ productInfo, setActiveProduct }) => {
             <h2>${price}</h2>
             <Desc>{description}</Desc>
             <RatingContainer>
-              {/* <div>{rating.rate}</div> */}
-              <StarContainer>
-                {/* <Star style={{ fill: 'hsl(48, 100%, 50%)' }} />
-                <Star />
-                <Star />
-                <Star />
-                <Star /> */}
-                {stars}
-              </StarContainer>
+              <Stars rating={rating} />
               <RatingCount>({rating.count})</RatingCount>
             </RatingContainer>
           </DetailWrapper>
@@ -93,7 +86,6 @@ const Image = styled.img`
   max-width: 75%;
   margin: 0 auto;
   max-height: 500px;
-  /* max-width: 200px; */
   cursor: pointer;
 
   @media (max-width: 800px) {
@@ -117,11 +109,6 @@ const RatingContainer = styled.div`
 
 const RatingCount = styled.div`
   color: hsl(0, 0%, 50%);
-`;
-
-const StarContainer = styled.div`
-  display: flex;
-  color: hsl(48, 100%, 50%);
 `;
 
 const Button = styled.button`
